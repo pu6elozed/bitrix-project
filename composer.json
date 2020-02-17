@@ -12,7 +12,7 @@
         "notamedia/console-jedi": "^1.2",
         "vlucas/phpdotenv": "^2.4",
         "bitrix-expert/monolog-adapter": "^1.0",
-        "org_heigl/hyphenator": "^2.3",
+        "org_heigl/hyphenator": "^2.3"
     },
 
     "require-dev": {
