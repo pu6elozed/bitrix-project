@@ -1,14 +1,23 @@
 {
   "parser": "babel-eslint",
-  "extends": "airbnb-base",
-  "plugins": ["vue"],
+  "env": {
+    "browser": true,
+    "node": true,
+    "jquery": true
+  },
+  "plugins": [
+    "vue",
+    "dollar-sign"
+  ],
+  "extends": ["airbnb-base", "prettier"],
   "rules": {
+    "dollar-sign/dollar-sign": [2, "ignoreProperties"],
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "no-unused-vars": 1,
+    "no-debugger": 1,
     "vue/jsx-uses-vars": 2,
     "no-param-reassign": 0,
     "max-len": 0,
     "func-names": 0
-  },
-  "env": {
-    "browser": "true"
   }
 }

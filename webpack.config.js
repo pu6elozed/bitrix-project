@@ -43,6 +43,24 @@ Encore
     .configureDefinePlugin((options) => {
         options.DEBUG =  !Encore.isProduction();
     })
+    .configureBabel(function (babelConfig) {
+      babelConfig.presets = [];
+      if (Encore.isProduction()) {
+        babelConfig.presets.push(["@babel/preset-env", {
+          "targets": {
+            "browsers": "last 3 versions, ie 11"
+          },
+          "corejs": "3",
+          "useBuiltIns": "usage",
+        }]);
+      }
+      babelConfig.plugins.push('@babel/plugin-transform-object-assign');
+    }, {
+      // include modules to babel, by default all node_modules are ignored; TODO
+      // includeNodeModules: ['masonry-layout', 'inputmask', 'micromodal', 'ladda', 'swiper', 'dom7']
+    })
+    // .enableSingleRuntimeChunk()
+    .disableSingleRuntimeChunk()
 
     // create hashed filenames (e.g. app.abc123.css)
 

@@ -1,0 +1,7 @@
+{
+  "upgrade": true,
+  "reject": [
+    "sass-loader",
+    "css-loader"
+  ]
+}

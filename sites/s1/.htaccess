@@ -1,6 +1,10 @@
 Options -Indexes 
 ErrorDocument 404 /404.php
 
+# beautify page url step1
+# ATTENTION set auto_prepend_file in php.ini; example:
+# php_value auto_prepend_file "/var/www/mc-podmoskovie/data/www/mc-podmoskovie.ru/local/php_interface/prepend.php"
+
 <IfModule mod_php5.c>
   php_flag session.use_trans_sid off
   #php_value display_errors 1
@@ -10,6 +14,10 @@ ErrorDocument 404 /404.php
 <IfModule mod_rewrite.c>
   Options +FollowSymLinks
   RewriteEngine On
+
+  #beautify page url step2
+  RewriteRule ^(.*)/page([\d]+)/ /$1/?PAGEN_1=$2 [L,QSA]
+
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-l
   RewriteCond %{REQUEST_FILENAME} !-d

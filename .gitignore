@@ -14,3 +14,20 @@ hosts.yml
 
 .env
 
+
+sites/*/bitrix
+sites/*/upload
+sites/*/local
+
+sites/*/robots.txt
+sites/*/.htaccess
+sites/*/sitemap.xml
+sites/*/sitemap*.xml
+sites/*/google*.html
+sites/*/yandex*.html
+sites/*/cmsmagazine*.txt
+
+cmsmagazine*
+/.idea/
+
+/logs/
